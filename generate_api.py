@@ -63,5 +63,5 @@ if __name__ == '__main__':
     api = client.core.describe()
 
     for module in mopidy_modules:
-        methods = {method: info for method, info in api.iteritems() if method.startswith('core.' + module)}
+        methods = {method: info for method, info in api.items() if method.startswith('core.' + module)}
         generate_controller_code(module, methods, version=version)
