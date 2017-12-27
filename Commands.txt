@@ -1,0 +1,38 @@
+exit: Exit the programm
+connect: Connect websocket client to Mopidy Server
+disconnect: Disconnect client from server
+api: Websocket RPC interface options and commands
+version: Print Mopidy Core and Mopidy-JSON Client Version
+send:
+debug: Toggle debug mode (enhanced debug output in logger)
+track: Get current track
+stream:
+pos: Print current timestamp of cursor in track
+state: Print current state (PLAYING, STOPPED, PAUSED)
+play: Start/Resume playing first song in queue
+pause: Pause playing current song
+stop: Stop playing songs
+resume: Resume playing songs
+next: Play next song in queue
+prev, previous: Play previous song or begin song again
+vol, volume: Print current volume (0-100)
+vol, volume <DIGIT(0-100)>: Set volume to DIGIT
+mute: Toggle mute
+tracklist: Print queue
+add <TRACK/PLAYLIST_URI>: Add track/playlist to tracklist
+del <TRACK_URI>: Remove track from tracklist
+clear: Clear tracklist completely
+random: Toggle random playback
+single: 
+repeat: Toogle repeating playback of song
+consume:
+options:
+playlists: Print registered playlists
+history: Print songs you heard previously
+browse:
+info, lookup, detail:
+image, images: Print URLs where to find thumbnails of current song
+search <TERM1> <TERM2>: Search for <TERM1> and <TERM2> and print results with URI
+uri <URI>: Set current URI
+save:
+
