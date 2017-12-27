@@ -2,7 +2,7 @@ import time
 import logging
 import json
 import threading
-
+from mopidy_json_client.formatting import formatter
 
 logger = logging.getLogger(__name__)
 
@@ -60,9 +60,15 @@ class RequestMessage(object):
         return json.dumps(json_msg)
 
     def wait_for_result(self):
+        counter = 0
         while self.locked:
             if time.time() - self.start_time > self.timeout:
                 raise RequestTimeoutError(self.method, self.timeout)
+            if counter == 20:
+                counter = 0
+                format = formatter()
+                format.instance.print_nice('Waiting for response from server', '')
+            counter = counter +1
             time.sleep(0.1)  # To save resouces
         return self.result
 
